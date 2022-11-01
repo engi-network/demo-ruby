@@ -4,7 +4,7 @@ Skeleton project demonstrating Ruby and RSpec on the Engi network.
 
 ## Install
 
-`pipenv install`
+`bundle install`
 
 ## Run
 
