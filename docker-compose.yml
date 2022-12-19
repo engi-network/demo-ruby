@@ -3,9 +3,12 @@ version: "3.9"
 services:
   tests:
     build: .
-    command: bundle exec rspec -f json -o rspec.json
+    command: bundle exec rspec -f json -o $ENGI_WORKING_DIR/rspec.json
     volumes:
-      # bind mount a directory to share the output of the test runner
-      - type: bind
-        source: .
-        target: /code
+      - type: volume
+        source: output
+        target: $ENGI_WORKING_DIR
+volumes:
+  output:
+    external: true
+    name: $ENGI_WORKING_VOL
